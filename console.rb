@@ -10,24 +10,62 @@ Movie.delete_all()
 
 movie1 = Movie.new(
   {'title' => "The Royal Tenenbaums",
-  'genre' => "Wes Anderson weirdness"})
-movie1.save()
+    'genre' => "Wes Anderson weirdness",
+    'budget' => 2000
+  })
+    movie1.save()
 
- star1 = Star.new (
+movie2 = Movie.new(
   {
-    'first_name' => "Ben",
-    'last_name' => "Stiller"
+    'title' => "Pulp Fiction",
+    'genre' => "Tarantino weirdness",
+    'budget' => 5000
     })
-    star1.save()
+    movie2.save()
+    star1 = Star.new (
+      {
+        'first_name' => "Ben",
+        'last_name' => "Stiller"
+        })
+        star1.save()
 
-  casting1 = Casting.new(
-    {
-      "movie_id" => movie1.id,
-      "star_id" => star1.id,
-      "fee" => "500"
-    }
-  )
-  casting1.save()
+        star2 = Star.new (
+          {
+            'first_name' => "Gwyneth",
+            'last_name' => "Paltrow"
+            })
+            star2.save()
 
-binding.pry
-nil
+            star3 = Star.new (
+              {
+                'first_name' => "Samuel L",
+                'last_name' => "Jackson"
+                })
+                star3.save()
+
+                casting1 = Casting.new(
+                  {
+                    "movie_id" => movie1.id,
+                    "star_id" => star1.id,
+                    "fee" => 500
+                  }
+                )
+                casting1.save()
+
+                casting2 = Casting.new(
+                  {
+                    'movie_id' => movie1.id,
+                    'star_id' => star2.id,
+                    "fee" => 600
+                    })
+                    casting2.save()
+
+                    casting3 = Casting.new(
+                      {
+                        'movie_id' => movie2.id,
+                        'star_id' => star3.id,
+                        "fee" => 1000
+                        })
+                        casting3.save()
+                        binding.pry
+                        nil

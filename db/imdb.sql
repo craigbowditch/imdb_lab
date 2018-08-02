@@ -8,6 +8,7 @@ CREATE TABLE movies (
   id SERIAL PRIMARY KEY,
   title (255),
   genre VARCHAR(255)
+  budget INT
 );
 
 CREATE TABLE stars (
